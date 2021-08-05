@@ -2,7 +2,9 @@ import * as ActionTypes from './ActionTypes';
 
 export const favorites = (state = [], action) => {
     switch (action.type) {
-        case ActionTypes.ADD_FAVORITE:
+        case ActionTypes.DELETE_FAVORITE:
+            return state.filter(favorite => favorite !== action.payload);
+
             if (state.includes(action.payload)) {
                 return state;
             }
